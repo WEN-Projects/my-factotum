@@ -1,0 +1,120 @@
+.author-row {
+  p {
+    strong {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.article-page {
+  .blog-content {
+    padding: 54px 0 110px;
+    @include breakpoint(medium){
+      padding: 54px 0 50px;
+    }
+    @include breakpoint(small){
+      padding: 20px 0 50px;
+    }
+    &:after {
+      right: auto;
+      left: 0;
+      width: 150px;
+      height: 67.1%;
+      @include breakpoint(wide){
+        width: 54%;
+        height: 48px;
+      }
+      @include breakpoint(small){
+        display: block;
+      }
+    }
+    .default-content {
+      p {
+        margin-bottom: 14px;
+        @include breakpoint(small){
+          margin-bottom: 11px;
+        }
+      }
+    }
+    .author-row {
+      font-size: 18px;
+      line-height: 1.22;
+      letter-spacing: -0.18px;
+      padding-top: 27px;
+      @include breakpoint(small){
+        padding-top: 0;
+        font-size: 16px;
+        letter-spacing: -0.16px;
+      }
+    }
+    .entry-meta{
+      strong{
+        margin-right: 14px;
+      }
+    }
+    .entry-title{
+      @include breakpoint(small) {
+        margin-bottom: 13px;
+      }
+    }
+  }
+  .sidebar-col {
+    margin-top: 0;
+    @include breakpoint(medium){
+      padding-top: 40px;
+    }
+    @include breakpoint(small){
+      background: transparent;
+      padding-top: 28px;
+      padding-bottom: 33px;
+    }
+    .widget {
+      ul {
+        li {
+          opacity: 1;
+        }
+      }
+    }
+    .widget_categories {
+      @include breakpoint(small) {
+        display: block;
+      }
+    }
+  }
+}
+.section-without-banner,
+.post-hero {
+  position: relative;
+  padding: 264px 0 0;
+  @include breakpoint(wide){
+    padding: 167px 0 0;
+  }
+  &:before {
+    content: '';
+    width: 586px;
+    height: 344px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $color-pink;
+    z-index: -1;
+    @include breakpoint(wide){
+      width: 50%;
+      height: 240px;
+    }
+  }
+}
+.section-without-banner{
+  padding-bottom: 40px;
+  background: $color-bg-purple-light;
+  &:before{
+    z-index: 0;
+  }
+  .page-title{
+    margin-bottom: 20px;
+  }
+  .container{
+    max-width: 1200px;
+    position: relative;
+  }
+}

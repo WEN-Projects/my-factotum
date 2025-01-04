@@ -1,0 +1,169 @@
+.estimer-page {
+  .hero {
+    &.shorter-hero {
+      @include breakpoint(small) {
+        height: 306px;
+      }
+    }
+    .banner-title {
+      br {
+        @include breakpoint(wide) {
+          display: none;
+        }
+      }
+    }
+    .container {
+      .hero-content {
+        @include breakpoint(small) {
+          padding-top: 84px;
+        }
+      }
+    }
+  }
+  .contact-form-wrap {
+    @include breakpoint(small) {
+      padding: 16px 0 28px;
+    }
+    h2 {
+      margin-bottom: 33px;
+      @include breakpoint(wide) {
+        font-size: 28px;
+      }
+      @include breakpoint(small) {
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+    }
+    h3 {
+      margin-bottom: 8px;
+      @include breakpoint(small) {
+        font-size: 16px;
+        letter-spacing: -0.16px;
+        margin-bottom: 13px;
+      }
+    }
+    form {
+      p {
+        margin-bottom: 11px;
+        @include breakpoint(small) {
+          margin-bottom: 8px;
+        }
+      }
+      textarea {
+        height: 97px;
+        @include breakpoint(small) {
+          height: 80px;
+        }
+      }
+      select {
+        @include breakpoint(small) {
+          padding: 10px 12px;
+        }
+      }
+      .form-row {
+        margin-bottom: 17px;
+        @include breakpoint(small) {
+          margin-bottom: 22px;
+        }
+        & + h3 {
+          margin-bottom: 3px;
+        }
+      }
+    }
+    .short-info {
+      padding: 50px 0 0;
+      @include breakpoint(small) {
+        padding: 16px 0 0;
+      }
+      h2 {
+        margin-bottom: 37px;
+        @include breakpoint(small) {
+          margin-bottom: 21px;
+        }
+      }
+      .two-col-content {
+        a {
+          color: $color-typo-dark;
+          &:hover {
+            color: $color-purple;
+          }
+        }
+      }
+    }
+  }
+}
+
+.inner-page {
+  .estimer-page {
+    .hero {
+      .container {
+        .hero-content {
+          h1 {
+            @include breakpoint(small) {
+              letter-spacing: -1px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.multiple-select-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  @include breakpoint(small) {
+    margin-bottom: 11px;
+  }
+  @include breakpoint(extrasmall) {
+    display: block;
+  }
+
+  > span,
+  .wpcf7-form-control-wrap {
+    width: 100%;
+    display: block;
+  }
+  .select2-container--default .select2-selection--multiple {
+    background: transparent;
+    border: 1px solid #36363d;
+    color: #36363d;
+    background: url(../../images/select-arrow.png) no-repeat calc(100% - 23px) center;
+    padding: 14px 27px 14px 15px;
+    @include breakpoint(small){
+      padding: 10px 12px;
+      background: url(../../images/select-arrow.png) no-repeat calc(100% - 15px) center;
+      background-size: 11px;
+    }
+  }
+  .select2-container--default .select2-search--inline .select2-search__field {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: $font-silkamedium;
+    color: $color-typo-dark;
+    @include breakpoint(small){
+      font-size: 16px;
+    }
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $color-typo-dark;
+      opacity: 1;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $color-typo-dark;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $color-typo-dark;
+      opacity: 1;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $color-typo-dark;
+      opacity: 1;
+    }
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    padding: 4px 31px 4px 10px;
+  }
+}

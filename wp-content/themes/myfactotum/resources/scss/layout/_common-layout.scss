@@ -1,0 +1,424 @@
+//Custom Hide Show Classes
+
+.desktop-wide {
+  @include breakpoint(wide) {
+    display: none !important;
+  }
+}
+
+.desktop-medium {
+  @include breakpoint(medium) {
+    display: none !important;
+  }
+}
+
+.desktop-small {
+  @include breakpoint(small) {
+    display: none !important;
+  }
+}
+
+.mobile-wide {
+  display: none !important;
+  @include breakpoint(wide) {
+    display: block !important;
+  }
+}
+
+.mobile-medium {
+  display: none !important;
+  @include breakpoint(medium) {
+    display: block !important;
+  }
+}
+
+.mobile-small {
+  display: none !important;
+  @include breakpoint(small) {
+    display: block !important;
+  }
+}
+
+.container {
+  max-width: 800px;
+}
+
+.inner-page {
+  .hero {
+    @include breakpoint(small) {
+      height: auto;
+      min-height: 470px;
+      padding: 194px 0 22px;
+    }
+    .container {
+      .hero-content {
+        padding-top: 174px;
+        @include breakpoint(small) {
+          padding: 0;
+        }
+        h1 {
+          font-size: 36px;
+          font-family: $font-silkalight;
+          color: $color-bg-light;
+          line-height: 1.12;
+          letter-spacing: -0.76px;
+          margin-bottom: 22px;
+          @include breakpoint(small) {
+            font-size: 26px;
+            line-height: 1.08;
+            letter-spacing: -0.26px;
+            margin-bottom: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  &.shorter-hero {
+    height: 603px;
+    @include breakpoint(small) {
+      height: 335px;
+      padding: 0 0;
+      min-height: inherit;
+    }
+    .container {
+      display: block;
+      .row {
+        align-items: center;
+        height: 100%;
+      }
+      .hero-content {
+        padding-top: 165px;
+        @include breakpoint(small) {
+          padding-top: 144px;
+        }
+        .orange-title {
+          color: $color-orange;
+          font-family: $font-silkalight;
+        }
+      }
+    }
+  }
+}
+
+.two-col-content {
+  column-count: 2;
+  column-gap: 31px;
+  column-fill: balance;
+  @include breakpoint(small) {
+    column-count: inherit;
+  }
+}
+
+.card-list-wrap {
+  padding: 61px 0;
+  background: $color-pink;
+  @include breakpoint(small) {
+    padding: 13px 0 48px;
+  }
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.filter-row {
+  padding-bottom: 19px;
+  @include breakpoint(small) {
+    padding-bottom: 14px;
+  }
+  p {
+    font-size: 16px;
+    font-family: $font-silkasemibold;
+    line-height: normal;
+    letter-spacing: -0.16px;
+    float: left;
+    margin-bottom: 0;
+    margin-right: 22px;
+    @include breakpoint(small) {
+      font-size: 14px;
+      letter-spacing: -0.14px;
+      margin-right: 14px;
+    }
+  }
+  label {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: -0.16px;
+    margin-right: 23px;
+    @include breakpoint(small) {
+      font-size: 14px;
+      letter-spacing: -0.14px;
+      margin-right: 15.4px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    .hide-on-mobile {
+      @include breakpoint(small) {
+        display: none;
+      }
+    }
+    .show-on-mobile {
+      display: none;
+      font-family: $arrows;
+      font-size: 18px;
+      letter-spacing: -0.18px;
+      line-height: 0.6;
+      @include breakpoint(small) {
+        display: inline-block;
+      }
+    }
+  }
+  input[type="radio"] {
+    margin-right: 6px;
+    vertical-align: text-top;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+//customize the radio button
+.checkbox-wrap label,
+.radio-wrap label {
+  position: relative;
+  padding-left: 24.2px;
+  cursor: pointer;
+  @include breakpoint(small) {
+    padding-left: 18.2px;
+  }
+}
+
+/* Hide the browser's default radio button */
+.checkbox-wrap input[type="checkbox"],
+.radio-wrap input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkbox-wrap .checkmark,
+.radio-wrap .checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background-color: $white;
+  border-radius: 50%;
+  @include breakpoint(small) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-wrap label:hover input[type="checkbox"] ~ .checkmark,
+.radio-wrap label:hover input[type="radio"] ~ .checkmark {
+  background-color: $color-purple;
+}
+
+/* When the radio button is checked, add a blue background */
+.checkbox-wrap input[type="checkbox"]:checked ~ .checkmark,
+.radio-wrap input[type="radio"]:checked ~ .checkmark {
+  background-color: $color-purple;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkbox-wrap .checkmark:after,
+.radio-wrap .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.checkbox-wrap input[type="checkbox"]:checked ~ .checkmark:after,
+.radio-wrap input[type="radio"]:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.checkbox-wrap .checkmark:after,
+.radio-wrap .checkmark:after {
+  //top: 0;
+  //left: 0;
+  //width: 14px;
+  //height: 14px;
+  //border-radius: 50%;
+  //background: $white;
+}
+
+.post-card {
+  background: $color-bg-light;
+  margin-bottom: 30px;
+  @include breakpoint(small) {
+    margin-bottom: 14px;
+  }
+  .img-slider {
+    .slick-arrow {
+      bottom: 44%;
+      left: 24px;
+      font-size: 40px;
+      z-index: 2;
+      &.slick-left {
+        left: auto;
+        right: 24px;
+      }
+      &.slick-right {
+        opacity: 1;
+      }
+    }
+    .image-holder {
+      height: 240px;
+      margin: 0;
+      @include breakpoint(extrasmall) {
+        height: 200px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .info {
+    position: relative;
+    padding: 21px 19px 24px 24px;
+    @include breakpoint(small) {
+      padding: 15px 6px 6px 18px;
+    }
+    h4 {
+      margin-bottom: 13px;
+      @include breakpoint(small) {
+        font-size: 18px;
+        letter-spacing: -0.18px;
+        margin-bottom: 7px;
+      }
+    }
+    .price {
+      font-size: 30px;
+      font-weight: normal;
+      letter-spacing: -0.3px;
+      font-family: $font-silkaregular;
+      @include breakpoint(small) {
+        font-size: 26px;
+        letter-spacing: -0.26px;
+      }
+    }
+    .link-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .btn {
+        font-size: 36px;
+        font-family: $font-silkalight;
+        line-height: 1.11;
+        letter-spacing: -0.36px;
+        color: $color-purple;
+        padding: 0 12px 0 9px;
+        background: transparent;
+        border: none;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        height: 38px;
+        @include breakpoint(small) {
+          margin-top: -38px;
+        }
+        span {
+          font-size: 14px;
+          font-family: $font-silkasemibold;
+          display: inline-block;
+          vertical-align: middle;
+          //margin-top: -14px;
+          margin-right: 7px;
+          letter-spacing: normal;
+          width: 0;
+          @include transition(0.4s);
+          white-space: nowrap;
+          opacity: 0;
+        }
+        font {
+          line-height: 1;
+          display: inherit;
+        }
+      }
+    }
+  }
+  &:hover {
+    .info {
+      h4, .size {
+        color: $color-purple;
+      }
+      .link-wrap {
+        .btn {
+          color: $white;
+          background: $color-purple;
+          border: 1px solid $color-purple;
+          span {
+            width: 105px;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cta {
+  min-height: 458px;
+  background: $color-typo-dark;
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  @include breakpoint(small) {
+    padding: 27px 0 32px;
+    min-height: inherit;
+  }
+  h2 {
+    font-family: $font-silkalight;
+    color: $color-bg-light;
+    margin-bottom: 33px;
+    letter-spacing: -0.90px;
+    @include breakpoint(small) {
+      margin-bottom: 15px;
+    }
+  }
+  .btn {
+    letter-spacing: normal;
+    @include breakpoint(small) {
+      padding: 8.5px 15px;
+    }
+  }
+}
+
+.page-template-default:not(.home) {
+  background: $color-bg-purple-light;
+}
+
+.page-template-default:not(.home),
+.single-post,
+.error404 {
+  .top-header {
+    background: $color-bg-extra-dark;
+  }
+  &.menu-active {
+    .top-header {
+      background: transparent;
+    }
+  }
+}
+
+.error-404 {
+  padding: 180px 0;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.modal-content {
+  //background: $color-bg-light;
+}

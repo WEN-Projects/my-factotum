@@ -1,0 +1,262 @@
+.blog-page, .article-page, .search-page, .default-page {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.inner-page {
+  .blog-hero {
+    height: 603px;
+    @include breakpoint(small) {
+      height: 298px;
+      padding: 0 0;
+      min-height: inherit;
+    }
+    .container {
+      display: block;
+      .row {
+        align-items: center;
+        height: 100%;
+      }
+      .hero-content {
+        padding-top: 150px;
+        @include breakpoint(small) {
+          padding-top: 85px;
+        }
+      }
+    }
+  }
+}
+
+.search-content,
+.blog-content {
+  padding: 60px 0;
+  position: relative;
+  @include breakpoint(small) {
+    padding: 17px 0 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 184px;
+    height: 61.8%;
+    background: $color-pink;
+    z-index: -1;
+    @include breakpoint(small) {
+      display: none;
+    }
+  }
+  .post-thumbnail {
+    margin-bottom: 25px;
+    display: block;
+    @include breakpoint(small) {
+      margin-bottom: 14px;
+    }
+  }
+  .entry-title {
+    margin-bottom: 20px;
+    color: $color-typo-dark;
+    a{
+      color: $color-typo-dark;
+    }
+    @include breakpoint(small) {
+      font-size: 24px;
+      line-height: 1.17;
+      letter-spacing: -0.24px;
+      margin-bottom: 12px;
+    }
+  }
+  .entry-meta {
+    font-size: 18px;
+    letter-spacing: -0.18px;
+    margin-bottom: 22px;
+    @include breakpoint(small) {
+      font-size: 16px;
+      letter-spacing: -0.16px;
+      margin-bottom: 19px;
+    }
+  }
+  .meta-tag {
+    color: $white;
+    background: $color-typo-dark;
+    margin: 0 15px;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 1px 5px;
+    @include breakpoint(small) {
+      margin: 0 9px;
+    }
+  }
+  .default-content {
+    margin-bottom: 27px;
+    @include breakpoint(small) {
+      margin-bottom: 16px;
+    }
+  }
+  article {
+    margin-bottom: 60px;
+    @include breakpoint(small) {
+      margin-bottom: 32px;
+    }
+  }
+  .link-wrap {
+    padding: 60px 0;
+    @include breakpoint(small) {
+      padding: 6px 0;
+      margin-bottom: 35px;
+    }
+    a.btn {
+      &:hover {
+        background: $white;
+      }
+    }
+  }
+  .show-on-mobile {
+    display: none;
+    @include breakpoint(small) {
+      display: block;
+    }
+    .widget {
+      @include breakpoint(small) {
+        margin: 0 0 18px;
+      }
+    }
+  }
+}
+
+.sidebar-col {
+  margin-top: -6px;
+  @include breakpoint(small) {
+    margin-top: 0;
+    padding-top: 16px;
+    padding-bottom: 17px;
+    background: $color-pink;
+  }
+  form {
+    input[type="text"],
+    input[type="email"] {
+      background: $white;
+      margin-bottom: 15px;
+      @include breakpoint(small) {
+        margin-bottom: 19px;
+      }
+    }
+    .btn {
+      padding: 9.5px 35px;
+      @include breakpoint(small) {
+        padding: 8.5px 32px;
+      }
+      &:hover {
+        background: $white;
+      }
+    }
+  }
+  .widget_categories {
+    @include breakpoint(small) {
+      display: none;
+    }
+  }
+}
+
+.widget {
+  margin: 0 0 50px;
+  @include breakpoint(small) {
+    margin: 0 0 6px;
+  }
+  .widget-title {
+    font-family: $font-silkalight;
+    margin-bottom: 30px;
+    @include breakpoint(small) {
+      font-size: 18px;
+      letter-spacing: -0.18px;
+      margin-bottom: 10px;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    @include breakpoint(small) {
+      @include clearfix;
+    }
+    li {
+      list-style-type: none;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.24px;
+      opacity: 0.4;
+      @include breakpoint(wide) {
+        font-size: 20px;
+      }
+      @include breakpoint(small) {
+        font-size: 16px;
+        letter-spacing: -0.48px;
+        margin-bottom: 5px;
+        float: left;
+        width: 50%;
+        font-family: $font-silkasemibold;
+      }
+      &:nth-child(even) {
+        @include breakpoint(small) {
+          width: 54%;
+        }
+        @media screen and (max-width: 374px) {
+          width: 100%;
+        }
+      }
+      &:nth-child(odd) {
+        @include breakpoint(small) {
+          width: 46%;
+        }
+        @media screen and (max-width: 374px) {
+          width: 100%;
+        }
+      }
+      a {
+        color: $color-typo-dark;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      &:hover {
+        opacity: 1;
+      }
+      &.current-cat {
+        opacity: 1;
+      }
+      .post-count {
+        font-size: 70%;
+        margin-left: 5px;
+        @include breakpoint(small) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.subscription-widget {
+  .widget-title {
+    margin-bottom: 18px;
+    @include breakpoint(small) {
+      margin-bottom: 14px;
+    }
+  }
+  .checkbox-wrap {
+    letter-spacing: -0.6px;
+    margin-bottom: 0;
+    font-size: 13.5px;
+    padding-left: 29px;
+    line-height: 1.3;
+    @include breakpoint(small) {
+      margin-bottom: 2px;
+      font-size: 12px;
+      letter-spacing: -0.12px;
+    }
+    .wpcf7-not-valid-tip {
+      bottom: -16px;
+    }
+  }
+}

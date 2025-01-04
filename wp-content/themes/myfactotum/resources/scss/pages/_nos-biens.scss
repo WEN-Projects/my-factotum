@@ -1,0 +1,507 @@
+.link-wrap {
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint(small) {
+    display: block;
+  }
+  .btn-wrap {
+    @include breakpoint(small) {
+      display: flex;
+      flex-flow: row-reverse;
+      justify-content: flex-end;
+    }
+    .btn {
+      margin-left: 12px;
+      @include breakpoint(small) {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  }
+}
+
+.inner-page {
+  .biens-hero {
+    @include breakpoint(small) {
+      padding: 144px 0 60px;
+      min-height: 385px;
+    }
+    .container {
+      .hero-content {
+        width: 100%;
+        padding: 43px 0 0;
+        @include breakpoint(small) {
+          padding-top: 30px;
+        }
+        .form-inner {
+          float: left;
+          width: calc(100% - 182px);
+          @include breakpoint(small) {
+            width: 100%;
+          }
+        }
+        #simple-search-submit-btn {
+          margin-top: 67px;
+          margin-left: 18px;
+          @include breakpoint(small) {
+            margin: 0;
+          }
+        }
+        .form-inner {
+          &.form-expanded {
+            float: none;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.not-found-text {
+  padding: 50px 15px;
+}
+
+.property-tab {
+  ul {
+    margin: 0 0 20px;
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(small) {
+      margin: 0 0 4px;
+    }
+    li {
+      list-style-type: none;
+      h2 {
+        font-family: $font-silkalight;
+        color: $color-bg-light;
+        opacity: 0.25;
+        cursor: pointer;
+        @include breakpoint(small) {
+          font-size: 22px;
+          line-height: 1.27;
+          letter-spacing: -0.22px;
+        }
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    @include breakpoint(small) {
+      margin-bottom: 2px;
+    }
+    input {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+
+      & + label {
+
+        font-family: $font-silkalight;
+        color: $color-bg-light;
+        opacity: 0.25;
+        cursor: pointer;
+        font-size: 36px;
+        letter-spacing: -0.36px;
+        &:hover {
+          opacity: 1;
+        }
+        @include breakpoint(small) {
+          font-size: 22px;
+          line-height: 1.27;
+          letter-spacing: -0.22px;
+        }
+        span {
+          display: none;
+        }
+      }
+
+      &:checked + label {
+        opacity: 1;
+        span {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.property-search-form {
+  .select2-selection, input, textarea, select {
+    font-size: 18px;
+    font-family: $font-silkamedium;
+    letter-spacing: normal;
+    text-align: left;
+    color: $color-purple;
+    padding: 13px 23px 13px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: $color-bg-light;
+    display: inline-block;
+    width: 100%;
+    @include clearfix;
+    @include breakpoint(small) {
+      padding: 9px 23px 9px 12px;
+    }
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $color-purple;
+      opacity: 0.5;
+      font-family: $font-silkamedium;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $color-purple;
+      opacity: 0.5;
+      font-family: $font-silkamedium;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $color-purple;
+      opacity: 0.5;
+      font-family: $font-silkamedium;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $color-purple;
+      opacity: 0.5;
+      font-family: $font-silkamedium;
+    }
+  }
+  textarea {
+    margin: 0 !important;
+    line-height: 0.9;
+    border-radius: 0;
+  }
+  .location-wrap {
+    .select2-selection {
+      padding-right: 150px;
+      @include breakpoint(small) {
+        padding-right: 12px;
+      }
+    }
+  }
+  .location-wrap, .specification-wrap, .type-wrap {
+    margin-bottom: 18px;
+    @include clearfix;
+    @include breakpoint(extrasmall) {
+      margin: 0 0 12px;
+    }
+    position: relative;
+    .abs-link {
+      position: absolute;
+      right: 23px;
+      top: 13px;
+      z-index: 1;
+      font-family: $font-silkaregular;
+      font-weight: bold;
+      font-size: 18px;
+      font-style: normal;
+      letter-spacing: normal;
+      text-align: right;
+      color: $color-purple;
+      @include breakpoint(small) {
+        right: auto;
+        top: auto;
+        bottom: -58px;
+        left: 138px;
+        padding: 10px 17px 11px 17px;
+        border-radius: 20px;
+        border: solid 1px $color-bg-light;
+        font-size: 14px;
+        font-weight: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: $color-bg-light;
+        &:hover {
+          background: $color-purple;
+          border: solid 1px $color-purple;
+        }
+      }
+      @include breakpoint(extrasmall) {
+        bottom: -52px;
+      }
+    }
+  }
+
+  .specification-wrap {
+    input {
+      float: left;
+      width: calc(33.3333% - 12px);
+      margin: 0 9px;
+      @include breakpoint(extrasmall) {
+        width: 100%;
+        margin: 0 0 12px;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+        @include breakpoint(extrasmall) {
+          margin: 0 0 0;
+        }
+      }
+    }
+  }
+
+  .type-wrap {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(extrasmall) {
+      display: block;
+    }
+    &:after {
+      display: none !important;
+    }
+    .select2-container {
+      float: left;
+      width: 244px !important;
+      @include breakpoint(extrasmall) {
+        width: 100% !important;
+        margin-bottom: 12px;
+      }
+      .select2-selection--single {
+        height: auto;
+        background: transparent;
+        border: 1px solid $color-bg-light;
+        padding: 13px 14px 14px 16px;
+        @include breakpoint(small) {
+          padding: 11px 14px 9px 12px;
+        }
+        .select2-selection__rendered {
+          color: $color-bg-light;
+          font-family: $font-silkaregular;
+          padding-left: 2px;
+        }
+        .select2-selection__arrow {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          right: 14px;
+          b {
+            border: none;
+            height: 10px;
+            width: 15px;
+            position: static;
+            margin-top: 0;
+            &:before {
+              content: 'T';
+              font-family: $arrows;
+              font-size: 36px;
+              font-weight: normal;
+              font-style: normal;
+              letter-spacing: normal;
+              text-align: left;
+              color: $color-bg-light;
+              height: 10px;
+              width: 15px;
+              line-height: 0;
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .select2-results > .select2-results__options {
+
+      }
+    }
+    input {
+      width: auto;
+    }
+  }
+  .action-wrap {
+    @include breakpoint(extrasmall) {
+      clear: both;
+      width: 100%;
+    }
+  }
+}
+
+.property-search-form {
+  .js-zipcode-multiple {
+    width: 100%;
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: none;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  margin: 0;
+  color: $color-purple;
+  line-height: normal;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 1;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-top-color: $color-purple;
+  opacity: 1;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__clear {
+  display: none;
+}
+
+.select2-search--dropdown {
+  display: none;
+}
+
+.select2-dropdown {
+  background: #26252A;
+}
+
+.select2-results__option {
+  padding: 12px 20px;
+  font-size: 18px;
+  color: $white;
+  background: transparent;
+  border-bottom: 1px solid $color-purple;
+  @include breakpoint(small) {
+    padding: 10px 12px;
+  }
+  &:last-child {
+    border: none;
+  }
+}
+
+.select2-container--default .select2-results__option--selected {
+  background-color: transparent;
+  color: $color-purple;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: transparent;
+  color: $color-purple;
+}
+
+.reset-btn {
+  font-family: $arrows;
+  font-size: 26px;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: $color-bg-light;
+  width: 47px;
+  height: 47px;
+  border: 1px solid $color-bg-light;
+  border-radius: 50%;
+  margin-right: 16px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  position: relative;
+  @include breakpoint(small) {
+    width: 40px;
+    height: 40px;
+    padding-top: 3px;
+  }
+  span {
+    @include center();
+    top: 52%;
+    left: 48%;
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    line-height: 0.5;
+    @include breakpoint(wide) {
+      line-height: 1;
+    }
+    @media not all and (min-resolution: .001dpcm) {
+      @supports (-webkit-appearance:none) {
+        line-height: 1;
+      }
+    }
+  }
+  &:focus,
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    color: $color-purple;
+    border-color: $color-purple;
+  }
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  margin: 0 9px 2px 0;
+  padding: 4px 71px 4px 10px;
+  border-radius: 4px;
+  background-color: $color-purple;
+  color: $color-bg-light;
+  font-family: $font-silkamedium;
+  font-size: 18px;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  border: none;
+  @include breakpoint(small) {
+    padding: 4px 25px 4px 10px;
+  }
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  left: auto;
+  top: -4px;
+  right: 0;
+  border: none;
+  color: $color-bg-light;
+  padding: 7px;
+  &:hover {
+    background: transparent;
+  }
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__clear {
+  display: none;
+}
+
+#real-state-search-form-vente .criteria-form {
+  display: none;
+}
+
+span.status-tag {
+  height: 77px;
+  width: 77px;
+  background: $color-purple;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  right: 23px;
+  top: 9px;
+  color: $white;
+  font-size: 20px;
+  z-index: 1;
+  @include breakpoint(wide) {
+    height: 60px;
+    width: 60px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,115 @@
+* {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+svg,
+img,
+video {
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
+}
+
+.html-overflow {
+  overflow: hidden;
+}
+
+body {
+  word-wrap: break-word;
+  color: $color-typo-dark;
+  background: $color-bg-light;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.14px;
+  overflow-x: hidden;
+}
+
+.post, .page {
+  margin: 0;
+}
+
+b, strong {
+  font-family: $font-silkasemibold;
+}
+
+font {
+  display: contents;
+}
+
+.default-page {
+  ol, ul, dl {
+    margin: 0 0 20px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-silkasemibold;
+  color: $color-typo-dark;
+  a {
+    color: $color-typo-dark;
+  }
+}
+
+h1, h2 {
+  font-size: 36px;
+  font-style: normal;
+  line-height: 1.11;
+  letter-spacing: -0.66px;
+  @include breakpoint(small){
+    font-size: 26px;
+    line-height: 1.08;
+    letter-spacing: -0.26px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: -0.24px;
+}
+
+h4 {
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+h5 {
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+h6 {
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+small{
+  font-size: 14px;
+  letter-spacing: -0.14px;
+  @include breakpoint(small){
+    font-size: 12px;
+    letter-spacing: -0.12px;
+  }
+}
+
+.line-title{
+  font-family: $font-silkasemibold;
+  border-bottom: 1px solid;
+  padding-bottom: 14px;
+  margin-bottom: 17px;
+  @include breakpoint(small){
+    padding-bottom: 12px;
+    margin-bottom: 13px;
+  }
+}

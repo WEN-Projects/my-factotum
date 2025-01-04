@@ -1,0 +1,52 @@
+// abstracts (global variable, function, mixin and placeholder)
+
+@import 'base/fonts';
+
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/animation';
+
+// vendors (CSS files from external libraries and frameworks)
+
+@import 'vendors/bootstrap';
+@import 'vendors/slick-theme';
+@import 'vendors/slick';
+@import 'vendors/select2';
+
+// base (boilerplate code)
+
+// @import 'base/reset';
+@import 'base/base';
+
+// layout (everything that takes part in laying out the site)
+
+//@import 'layout/layout';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/common-layout';
+
+// component (for smaller components like buttons, carousel, widgets, loader)
+@import "components/wp-classes";
+@import "components/navigation";
+@import "components/forms";
+@import "components/my-account-overlay";
+
+
+//page (page-specific styles)
+@import 'pages/home-and-history';
+@import 'pages/notre-equipe';
+@import 'pages/nos-biens';
+@import 'pages/single-realstate';
+@import 'pages/fiche-agent';
+@import 'pages/services';
+@import 'pages/blog-listing';
+@import 'pages/blog-article';
+@import 'pages/nous-rejoindre';
+@import 'pages/contact';
+@import 'pages/estimer';
+@import 'pages/wc-dashboard';
+@import 'pages/woocommerce-default';
+@import 'pages/wc-checkout';
+
+//themes
+

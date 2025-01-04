@@ -1,0 +1,493 @@
+.page-template-woocommerce-factotum:not(.woocommerce-lost-password):not(.woocommerce-reset-password):not(.woocommerce-forget-password) {
+  .site-header {
+    .top-header {
+      background: $color-bg-extra-dark;
+    }
+    .nav-header {
+      .quick-links {
+        .my-account-white {
+          background: $color-bg-light;
+          color: $color-purple;
+          border: 1px solid $color-bg-light;
+        }
+        .lang-switcher {
+          li {
+            &:after {
+              color: $color-bg-light;
+            }
+            a {
+              color: $color-bg-light;
+              &:after {
+                background: $color-bg-light;
+              }
+            }
+          }
+        }
+      }
+      .main-navigation {
+        ul {
+          li {
+            a {
+              color: $color-bg-light;
+              &:after {
+                background: $color-bg-light;
+                @include breakpoint(wide) {
+                  background: $color-purple;
+                }
+              }
+            }
+          }
+        }
+      }
+      .trigger-menu {
+        color: $color-bg-light;
+        a {
+          span {
+            background: $color-bg-light;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wc-dashboard-page {
+  background: $color-bg-purple-light;
+  .account-nav-section {
+    background: $color-purple;
+    padding: 270px 0 68px;
+    @include breakpoint(wide) {
+      padding: 130px 0 68px;
+    }
+    @include breakpoint(small) {
+      padding: 98px 0 42px;
+    }
+    h2 {
+      font-family: $font-silkalight;
+      margin-bottom: 31px;
+      color: $color-bg-light;
+      @include breakpoint(small) {
+        font-size: 24px;
+        line-height: 1.08;
+        letter-spacing: -0.24px;
+        margin-bottom: 20px;
+      }
+    }
+    p {
+      color: $color-bg-light;
+      font-family: $font-silkalight;
+      @include breakpoint(small) {
+        font-size: 12px;
+        letter-spacing: -0.12px;
+      }
+      a {
+        color: $color-bg-light;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .woocommerce-MyAccount-navigation {
+      float: none;
+      width: auto;
+      ul {
+        margin: 0;
+        padding: 14px 0 0 0;
+        @include breakpoint(medium) {
+          overflow: hidden;
+          padding: 0;
+        }
+        li {
+          list-style-type: none;
+          @include breakpoint(medium) {
+            float: left;
+            width: 50%;
+            padding-right: 10px;
+          }
+          @media screen and (max-width: 374px) {
+            width: 100%;
+            float: none;
+          }
+          a {
+            opacity: 0.4;
+            font-family: $font-silkasemibold;
+            font-size: 24px;
+            line-height: 1.25;
+            letter-spacing: -0.24px;
+            color: $color-bg-light;
+            @include breakpoint(small) {
+              font-size: 16px;
+              line-height: 1.5;
+              letter-spacing: -0.16px;
+            }
+            &:hover {
+              opacity: 1;
+            }
+          }
+          &.is-active {
+            a {
+              opacity: 1;
+            }
+          }
+          &:nth-child(even) {
+            a {
+              @include breakpoint(medium) {
+                margin-left: 15px;
+              }
+
+              @media screen and (max-width: 374px) {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .post-card {
+    position: relative;
+  }
+}
+
+.wc-MyAccount-content {
+  padding: 43px 0 59px;
+  @include breakpoint(small) {
+    padding: 16px 0 15px;
+  }
+  h2 {
+    margin-bottom: 41px;
+    @include breakpoint(small) {
+      font-size: 18px;
+      letter-spacing: -0.18px;
+      margin-bottom: 18px;
+    }
+  }
+  .post-card {
+    margin-bottom: 13px;
+  }
+  .rs-item {
+    font-size: 14px;
+    font-family: $font-silkasemibold;
+    margin-bottom: 29px;
+    display: inline-block;
+    @include breakpoint(small) {
+      font-size: 12px;
+      letter-spacing: -0.12px;
+    }
+    &.remove-from-trash {
+      font-family: $font-silkaregular;
+    }
+  }
+}
+
+//.rs-alert-wrap styles
+
+.rs-alert-wrap {
+  .alert-list {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+      margin-bottom: 30px;
+      .inner {
+        position: relative;
+        background: $white;
+        padding: 17px 20px 17px 19px;
+        margin-bottom: 13px;
+        @include breakpoint(small) {
+          padding: 16px 16px 26px;
+        }
+        p {
+          color: $color-purple;
+          margin-bottom: 9px;
+          cursor: pointer;
+          display: inline-block;
+          letter-spacing: normal;
+          @include breakpoint(small) {
+            font-size: 12px;
+            margin-bottom: 12px;
+          }
+        }
+        h4 {
+          color: $color-purple;
+          font-size: 18px;
+          line-height: 1.17;
+          margin-bottom: 0;
+          letter-spacing: normal;
+          @include breakpoint(small) {
+            margin-bottom: 14px;
+          }
+        }
+        .btn {
+          float: right;
+          font-size: 14px;
+          padding: 9.5px 24px;
+          letter-spacing: normal;
+          &:hover {
+            color: $color-typo-dark;
+            background: transparent;
+            border-color: $color-typo-dark;
+          }
+          @include breakpoint(small) {
+            float: none;
+            padding: 8px 24px;
+          }
+        }
+        @include breakpoint(small) {
+          background: $color-bg-light;
+          p, h4, .btn {
+            color: $color-typo-dark;
+          }
+          .btn {
+            background: transparent;
+            border-color: $color-typo-dark;
+          }
+        }
+        &:hover {
+          background: $color-bg-light;
+          p, h4 {
+            color: $color-typo-dark;
+          }
+          p{
+            font-family: $font-silkasemibold;
+          }
+        }
+      }
+      .rs-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/*Order list style*/
+.rs-order-wrap {
+
+}
+
+.woocommerce {
+  table {
+    &.shop_table {
+      border-collapse: collapse;
+      border-radius: 0;
+      border: none;
+      background: $white;
+      margin-bottom: 29px;
+      &:hover {
+        background: $color-bg-light;
+        td, th {
+          color: $color-typo-dark;
+        }
+        td {
+          a {
+            color: $color-typo-dark;
+          }
+          .btn {
+            color: $color-typo-dark;
+            border-color: $color-typo-dark;
+            background: transparent;
+          }
+        }
+      }
+      td, th {
+        padding: 14px 19px;
+        vertical-align: middle;
+        font-size: 14px;
+        font-family: $font-silkaregular;
+        font-weight: normal;
+        letter-spacing: normal;
+        color: $color-purple;
+      }
+      th {
+      }
+      td {
+        font-family: $font-silkasemibold;
+        font-size: 18px;
+        letter-spacing: normal;
+        color: $color-purple;
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+          padding: 10px 19px 9px;
+          border-top: 1px solid rgba(0, 0, 0, .1);
+        }
+        input#submit.alt,
+        a.button.alt,
+        button.button.alt,
+        input.button.alt,
+        input#submit,
+        a.button,
+        button.button,
+        input.button,
+        .btn {
+          font-size: 14px;
+          font-family: $font-silkaregular;
+          &:hover {
+            color: $color-bg-light;
+            border-color: $color-purple;
+            background: $color-purple;
+          }
+        }
+      }
+      @media screen and (max-width: 768px) {
+        background: $color-bg-light;
+        td, th {
+          color: $color-typo-dark;
+        }
+        td {
+          a {
+            color: $color-typo-dark;
+          }
+          .btn {
+            color: $color-typo-dark;
+            border-color: $color-typo-dark;
+            background: transparent;
+          }
+        }
+      }
+    }
+    &.my_account_orders {
+      td, th {
+        border: 0;
+        @media screen and (max-width: 768px) {
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+      th {
+        padding: 14px 19px 0;
+      }
+      td {
+        padding: 3px 19px 9px;
+        @media screen and (max-width: 768px) {
+          padding: 10px 14px;
+        }
+      }
+    }
+  }
+  #respond input#submit.alt,
+  a.button.alt,
+  button.button.alt,
+  input.button.alt,
+  #respond input#submit,
+  a.button,
+  button.button,
+  input.button {
+    //font-size: 14px;
+    //font-family: $font-silkaregular;
+  }
+  .woocommerce-customer-details {
+    address {
+      border-collapse: collapse;
+      border-radius: 0;
+      border: none;
+      background: $white;
+      padding: 14px 19px;
+      vertical-align: middle;
+      font-size: 14px;
+      font-family: $font-silkaregular;
+      letter-spacing: normal;
+      color: $color-purple;
+      border: 0;
+    }
+  }
+  ul.order_details {
+    padding: 0;
+    background: $white;
+    li {
+      padding: 14px 19px;
+      vertical-align: middle;
+      font-family: $font-silkaregular;
+      font-weight: normal;
+      letter-spacing: normal;
+      color: $color-purple;
+      font-size: 10px;
+      @include breakpoint(wide) {
+        padding: 10px;
+        margin-right: 0;
+      }
+      @include breakpoint(small) {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+//Account detail page
+.woocommerce-EditAccountForm {
+  margin: 0 -6px;
+  @include breakpoint(wide){
+    margin: 0;
+  }
+  label.checkbox-wrap {
+    margin-top: 10px;
+    @include breakpoint(small){
+      color: $color-purple;
+    }
+    .checkmark {
+      top: 7px;
+      @include breakpoint(small){
+        top: 2px;
+      }
+    }
+  }
+  fieldset {
+    padding: 0 0 7px;
+    margin-top: 15px;
+    legend {
+      font-size: 14px;
+      font-family: $font-silkasemibold;
+      color: $color-purple;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.woocommerce {
+  .woocommerce-EditAccountForm {
+    .form-row {
+      padding: 0;
+      display: block;
+    }
+  }
+}
+
+.hide-show-trigger,
+.editable {
+  position: relative;
+  input{
+    padding-right: 90px;
+    pointer-events: none;
+  }
+  .show-option,
+  .edit-option {
+    font-size: 14px;
+    font-family: $font-silkaregular;
+    color: $color-purple;
+    text-decoration: underline;
+    position: absolute;
+    right: 19px;
+    top: 37%;
+    z-index: 1;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.hide-show-trigger{
+  input{
+    pointer-events: none;
+    padding-right: 90px !important;
+    &:focus{
+      pointer-events: none;
+    }
+  }
+}
+
+.show-password-input{
+  display: none;
+}
+.hidden-field{
+  display: none;
+}

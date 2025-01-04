@@ -1,0 +1,82 @@
+.contact-page {
+  .hero {
+    height: 603px;
+    @include breakpoint(small) {
+      height: 385px;
+      padding: 0 0;
+      min-height: inherit;
+    }
+    .container {
+      display: block;
+      .row {
+        align-items: center;
+        height: 100%;
+      }
+      .hero-content {
+        padding-top: 295px;
+        @include breakpoint(small) {
+          padding-top: 194px;
+        }
+        .orange-title {
+          color: $color-orange;
+          font-family: $font-silkalight;
+        }
+      }
+    }
+  }
+  .cta-block{
+    h2{
+      @include breakpoint(small){
+        margin-bottom: 15px;
+      }
+    }
+    .btn{
+      @include breakpoint(small){
+        padding: 8.5px 14px;
+      }
+    }
+  }
+}
+
+.bg-pink {
+  background: $color-pink;
+}
+.bg-pink-light {
+  background: $color-bg-purple-light;
+}
+
+.contact-form-wrap {
+  padding: 55px 0 73px;
+  @include breakpoint(small){
+    padding: 13px 0 30px;
+  }
+  h2 {
+    font-family: $font-silkalight;
+    @include breakpoint(wide){
+      font-size: 34px;
+    }
+    @include breakpoint(small){
+      margin-bottom: 21px;
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -0.24px;
+    }
+  }
+  .form-row {
+    .full {
+      padding: 0 5px;
+    }
+  }
+  textarea.form-control, textarea {
+    height: 144px;
+    @include breakpoint(small){
+      height: 120px;
+    }
+  }
+  .checkbox-wrap {
+    margin-bottom: 23px;
+    @include breakpoint(small){
+      margin-bottom: 20px;
+    }
+  }
+}

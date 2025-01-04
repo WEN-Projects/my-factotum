@@ -1,0 +1,346 @@
+.site-header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  @media screen and (min-width: 1200px) {
+    position: absolute;
+  }
+
+  &:before {
+    @include breakpoint(wide) {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: $color-purple;
+      left: -100%;
+      top: 0;
+      @include transition(0.4s);
+    }
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 55px 0 38px;
+    @include clearfix;
+    @include breakpoint(wide) {
+      padding: 0 15px 0 16px;
+    }
+  }
+
+  .top-header {
+    padding: 34px 0 32px;
+    border-bottom: 1px solid $color-purple;
+    @include transition(0.4s);
+    @include breakpoint(wide) {
+      padding: 14px 0 13px;
+      background: $color-bg-extra-dark;
+    }
+
+    .pointer-logo {
+      float: left;
+      @include breakpoint(wide) {
+        max-width: 23px;
+      }
+    }
+
+    .site-branding {
+      float: right;
+      padding: 8px 0 0;
+      @include breakpoint(wide) {
+        padding: 3px 0 0;
+        max-width: 171px;
+      }
+    }
+  }
+
+  .nav-header {
+    padding: 14px 0;
+    @include breakpoint(wide){
+      background: $color-bg-extra-dark;
+    }
+    .quick-links {
+      float: left;
+
+      .my-account,
+      .my-account-white{
+        padding: 6.5px 15px;
+        border-radius: 16px;
+        border: solid 1px $color-purple;
+        background-color: transparent;
+        display: inline-block;
+        font-size: 14px;
+        font-family: $font-silkamedium;
+        letter-spacing: normal;
+        @include breakpoint(wide) {
+          font-size: 12px;
+          padding: 4px 9px;
+        }
+        &:hover, &.active {
+          background: $color-pink;
+          color: $color-purple;
+          border: solid 1px $color-pink;
+        }
+      }
+
+      .lang-switcher {
+        display: inline-block;
+        margin: 0 0 0 33px;
+        padding: 0;
+        @include breakpoint(wide) {
+          margin-left: 0;
+        }
+
+        &.mobile-wide {
+          @include breakpoint(wide) {
+            display: none !important;
+          }
+        }
+
+        li {
+          display: inline-block;
+          list-style-type: none;
+          position: relative;
+          margin-right: 10px;
+          @include breakpoint(wide) {
+            margin-right: 7px;
+          }
+
+          &:after {
+            content: '|';
+            position: absolute;
+            top: 0;
+            right: -9px;
+            color: $color-purple;
+            @include breakpoint(wide) {
+              color: $white;
+              right: -7px;
+            }
+          }
+
+          &:last-child {
+            &:after {
+              content: '';
+            }
+          }
+
+          a {
+            font-size: 14px;
+            font-family: $font-silkamedium;
+            @include breakpoint(wide) {
+              color: $white;
+              font-size: 12px;
+            }
+
+            &:hover {
+              color: $color-purple;
+              //border-bottom: 1px solid $color-purple;
+              @include breakpoint(wide) {
+                border: none;
+              }
+            }
+          }
+
+          &.active {
+            a {
+              border: none;
+
+              &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background: $color-purple;
+                bottom: -5px;
+                left: 0;
+                @include breakpoint(wide) {
+                  background: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .main-navigation {
+      float: right;
+      width: auto;
+      @media screen and (min-width: 1200px) {
+        height: auto !important;
+      }
+    }
+  }
+
+  &.sticky {
+    @media screen and (min-width: 1200px) {
+      animation: show-down 0.6s linear forwards;
+      position: fixed;
+      background: $color-bg-extra-dark;
+      border-bottom: 1px solid $color-purple;
+      z-index: 10;
+      padding: 20px 0 23px;
+      .container {
+        padding: 0 55px 0 23px;
+      }
+      .top-header {
+        border: none;
+        float: right;
+        padding: 0;
+
+        .pointer-logo {
+          display: none;
+        }
+
+        .site-branding {
+          max-width: 175px;
+          padding: 0;
+        }
+      }
+      .nav-header {
+        padding: 0;
+        float: left;
+
+        .quick-links {
+          margin-right: 11px;
+
+          .lang-switcher {
+            display: none;
+          }
+        }
+
+        .main-navigation {
+          float: left;
+
+          ul {
+            li {
+              margin: 0 14.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// animation keyframes
+@keyframes show-down {
+  0% {
+    position: absolute;
+    opacity: 0;
+    top: -200px;
+    transform: translateY(-100%);
+  }
+  100% {
+    position: fixed;
+    opacity: 1;
+    transform: translateY(0);
+    top: 0;
+  }
+}
+
+.scrolled {
+  .site-header {
+    .top-header {
+      mix-blend-mode: multiply;
+      @include breakpoint(wide){
+        background: $color-bg-extra-dark;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      &.sticky {
+        .top-header {
+          background: $color-bg-extra-dark;
+          mix-blend-mode: inherit;
+        }
+      }
+    }
+  }
+
+  &.menu-active {
+    .site-header {
+      .top-header {
+        background: transparent;
+        mix-blend-mode: normal;
+      }
+    }
+  }
+}
+
+.menu-active {
+  .site-header {
+    .top-header {
+      @include breakpoint(wide){
+        background: transparent;
+      }
+      .pointer-logo {
+        svg {
+          path {
+            @include breakpoint(wide) {
+              fill: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .nav-header {
+      @include breakpoint(wide){
+        background: transparent;
+      }
+      .quick-links {
+        .my-account,
+        .my-account-white{
+          @include breakpoint(wide) {
+            display: none;
+          }
+        }
+
+        .lang-switcher {
+          @include breakpoint(wide) {
+            height: 24px;
+          }
+
+          &.mobile-wide {
+            @include breakpoint(wide) {
+              display: block !important;
+            }
+          }
+
+          li {
+            a {
+              &:hover {
+                @include breakpoint(wide) {
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.expert-popup-visible {
+  .site-header {
+    .nav-header {
+      @include breakpoint(small) {
+        display: none;
+      }
+    }
+
+    .top-header {
+      @include breakpoint(small) {
+        background: transparent;
+      }
+    }
+  }
+}
+
+.my-account-login #slider-register-form {
+  display: none;
+}

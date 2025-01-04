@@ -1,0 +1,129 @@
+.page-template-nos-services {
+  &.inner-page {
+    .hero {
+      .container {
+        .hero-content {
+          h1 {
+            margin-bottom: 30px;
+            @include breakpoint(small){
+              margin-bottom: 16px;
+              letter-spacing: -0.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.services-page{
+  .cta-block{
+    h2{
+      letter-spacing: -0.96px;
+      @include breakpoint(small){
+        letter-spacing: -0.46px;
+      }
+    }
+  }
+}
+
+.services-content-wrap {
+  padding: 67px 0 81px;
+  position: relative;
+  @include breakpoint(small){
+    padding: 15px 0 36px;
+  }
+  &:before,
+  &:after{
+    content: '';
+    width: 184px;
+    height: 461px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $color-pink;
+    z-index: -1;
+    @include breakpoint(small){
+      top: 32.5%;
+      width: 50%;
+      height: 543px;
+    }
+  }
+  &:after{
+    width: 50%;
+    height: 147px;
+    top: auto;
+    bottom: 0;
+    right: 50%;
+    @include breakpoint(small){
+      height: 24px;
+    }
+  }
+  .line-title {
+    letter-spacing: -0.36px;
+  }
+  .two-col-content {
+    column-gap: 27px;
+  }
+}
+
+.counter-wrap {
+  padding: 26px 4px 42px;
+  @include breakpoint(small){
+    padding: 3px 0 4px;
+  }
+  .counter-box {
+    background: $color-orange;
+    padding: 11px 21px 8px;
+    position: relative;
+    @include breakpoint(small){
+      padding: 10px 18px 3px;
+      margin-bottom: 18px;
+    }
+    h4 {
+      font-family: $font-silkalight;
+      font-size: 24px;
+      line-height: 1.67;
+      letter-spacing: -0.24px;
+      color: $color-bg-light;
+      @include breakpoint(small){
+        font-size: 22px;
+        letter-spacing: -0.22px;
+      }
+    }
+    .customer-number {
+      text-align: center;
+      font-family: $font-silkasemibold;
+      font-size: 72px;
+      line-height: 0.56;
+      letter-spacing: -0.72px;
+      color: $color-bg-light;
+      padding: 45px 0 50px;
+      @include breakpoint(small){
+        padding: 19px 0 36px;
+      }
+      .number {
+      }
+    }
+    .access-info {
+      font-family: $font-silkalight;
+      font-size: 14px;
+      line-height: 2.86;
+      letter-spacing: -0.14px;
+      color: $color-bg-light;
+      margin: 0;
+      a {
+        color: $color-bg-light;
+        &:hover {
+          color: $color-typo-dark;
+        }
+      }
+    }
+  }
+  .col-sm-4{
+    padding: 0 11px;
+    @include breakpoint(small){
+      padding: 0 15px;
+    }
+  }
+}

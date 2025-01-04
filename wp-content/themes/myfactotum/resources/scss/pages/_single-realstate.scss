@@ -1,0 +1,317 @@
+.single-real-state-product {
+  .top-header {
+    background: rgba(0, 0, 0, 0.5);
+    mix-blend-mode: multiply;
+    @include breakpoint(wide){
+      background: $color-bg-extra-dark;
+    }
+  }
+  &.menu-active {
+    .top-header {
+      background: transparent;
+      mix-blend-mode: inherit;
+    }
+  }
+}
+
+.realstate-hero {
+  height: 648px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  @include breakpoint(small) {
+    height: auto;
+    overflow: visible;
+  }
+  .full-hero {
+    height: 100%;
+    width: 100%;
+    .banner-holder {
+      height: 100vh;
+      width: 100%;
+      margin: 0;
+      @include breakpoint(small) {
+        height: 367px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .slick-arrow {
+      font-size: 60px;
+      color: $white;
+      bottom: 36%;
+      left: 40px;
+      opacity: 1;
+      @include breakpoint(small) {
+        font-size: 43.5px;
+        bottom: 32%;
+        left: 13px;
+      }
+      &.slick-left {
+        left: auto;
+        right: 40px;
+        @include breakpoint(small) {
+          right: 13px;
+        }
+      }
+    }
+  }
+  .hero-nav-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @include breakpoint(small) {
+      position: static;
+    }
+    .container {
+      max-width: 1200px;
+    }
+  }
+  .hero-nav {
+    width: calc(100% + 30px);
+    @include breakpoint(small) {
+      padding-top: 14px;
+      width: calc(100% + 12px);
+    }
+    .thumb-holder {
+      width: 85px;
+      height: 60px;
+      overflow: hidden;
+      margin-right: 15px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      @include breakpoint(small) {
+        width: 77px;
+        height: 55px;
+        margin-right: 12px;
+        margin-bottom: 12px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      &.slick-current {
+        position: relative;
+        pointer-events: all;
+        &:after,
+        &:before {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          opacity: 0.5;
+          background-color: #36363d;
+        }
+        &:after {
+          content: '+';
+          opacity: 1;
+          font-size: 36px;
+          font-family: $font-silkalight;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $color-bg-light;
+          background: transparent;
+        }
+      }
+    }
+    .slick-track {
+      transform: none !important;
+      width: 100% !important;
+    }
+  }
+}
+
+.realestate-disc {
+  padding: 26px 0 72px;
+  overflow: hidden;
+  @include breakpoint(small) {
+    padding: 9px 0 0;
+  }
+  .container {
+    max-width: 1200px;
+  }
+  .detail-col {
+    .location-title {
+      font-size: 18px;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.18px;
+      margin-bottom: 20px;
+      @include breakpoint(small) {
+        font-size: 14px;
+        letter-spacing: -0.14px;
+        margin-bottom: 12px;
+      }
+    }
+    .property-title {
+      margin-bottom: 2px;
+      @include breakpoint(small) {
+        font-size: 22px;
+        line-height: 1.27;
+        letter-spacing: -0.22px;
+        margin-bottom: 1px;
+      }
+    }
+    .price {
+      font-family: $font-silkaregular;
+      font-size: 36px;
+      line-height: normal;
+      letter-spacing: -0.36px;
+      margin-bottom: 20px;
+      @include breakpoint(small) {
+        font-size: 26px;
+        line-height: 1.08;
+        letter-spacing: -0.26px;
+        margin-bottom: 18px;
+      }
+    }
+  }
+  .wishlist-col {
+    @include breakpoint(medium) {
+      margin-bottom: 28px;
+    }
+    @include breakpoint(small) {
+      margin-bottom: 25px;
+    }
+    &.show-on-small-screen {
+      display: none;
+      @include breakpoint(medium) {
+        display: block;
+      }
+    }
+    &.hide-on-small-screen {
+      @include breakpoint(medium) {
+        display: none;
+      }
+    }
+  }
+  .add-to-favorite,
+  .remove-from-favorite {
+    font-size: 18px;
+    letter-spacing: -0.18px;
+    @include breakpoint(small) {
+      font-size: 14px;
+      letter-spacing: -0.14px;
+    }
+    img {
+      margin-right: 10px;
+      vertical-align: baseline;
+      margin-bottom: -2px;
+    }
+    &:hover {
+      opacity: 0.8;
+      color: $color-purple;
+    }
+  }
+  ul.property-feature {
+    margin: 0;
+    padding: 29px 0 0;
+    overflow: hidden;
+    @include breakpoint(medium) {
+      padding: 29px 0 30px;
+    }
+    @include breakpoint(small) {
+      padding: 11px 0 28px;
+    }
+    li {
+      list-style-type: none;
+      float: left;
+      width: 33.33333%;
+      margin-bottom: 16px;
+      padding-right: 15px;
+      color: $color-orange;
+      @include breakpoint(wide) {
+        width: 50%;
+      }
+      a {
+        color: $color-orange;
+        &:hover {
+          color: $color-purple;
+        }
+      }
+    }
+  }
+}
+
+.agent-box {
+  background: $color-pink;
+  position: relative;
+  margin-top: -26px;
+  padding-top: 26px;
+  margin-left: -30px;
+  padding-left: 30px;
+  padding-bottom: 31px;
+  @include breakpoint(wide) {
+    margin-left: 0;
+    padding-left: 15px;
+  }
+  @include breakpoint(medium) {
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  @include breakpoint(small) {
+    padding-top: 15px;
+    padding-bottom: 47px;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    width: 10000%;
+    background: $color-pink;
+    @include breakpoint(medium) {
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: -1;
+    }
+  }
+  h4 {
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: -0.18px;
+    margin-bottom: 25px;
+    @include breakpoint(small) {
+      margin-bottom: 15px;
+    }
+  }
+  .agent-image-holder {
+    height: 270px;
+    max-width: 270px;
+    margin-bottom: 28px;
+    @include breakpoint(extrasmall) {
+      width: 100%;
+      max-width: 100%;
+      height: 192px;
+      margin-bottom: 22px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  p {
+    a {
+      color: $color-typo-dark;
+      &:hover {
+        color: $color-purple;
+      }
+    }
+  }
+  .btn {
+    margin-top: 16px;
+    @include breakpoint(small) {
+      margin-top: 14px;
+    }
+  }
+}

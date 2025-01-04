@@ -1,0 +1,670 @@
+
+.hero {
+  height: 100vh;
+  position: relative;
+  @include breakpoint(small) {
+    //max-height: -webkit-fill-available;
+  }
+  .video-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    video {
+      width: 100%;
+      height: auto;
+      max-width: inherit;
+      @include center();
+      @include breakpoint(wide) {
+        //height: 100%;
+        //width: auto;
+      }
+      @media (min-aspect-ratio: 16/9) {
+        width: 100%;
+        height: auto;
+      }
+      @media (max-aspect-ratio: 16/9) {
+        width: auto;
+        height: 100%;
+      }
+    }
+    .video-external {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @media (min-aspect-ratio: 16/9) {
+        height: 300%;
+        top: -100%;
+      }
+      @media (max-aspect-ratio: 16/9) {
+        width: 300%;
+        left: -100%;
+        @include breakpoint(small) {
+          width: 400%;
+          left: -150%;
+        }
+      }
+      iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        pointer-events: none;
+      }
+    }
+    &.youtube-video {
+      .video-external {
+        iframe {
+          pointer-events: inherit;
+        }
+      }
+    }
+  }
+  .container {
+    height: 100%;
+    max-width: 805px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    .hero-content {
+      padding-top: 54px;
+      @include breakpoint(wide) {
+        padding: 43px 7% 0;
+      }
+      h1 {
+        color: $color-orange;
+        font-size: 72px;
+        font-family: $font-silkalight;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: -2.32px;
+        @include breakpoint(wide) {
+          font-size: 62px;
+        }
+        @include breakpoint(small) {
+          font-size: 38px;
+          letter-spacing: -0.38px;
+        }
+      }
+      .two-col-content {
+        p {
+          font-size: 14px;
+          line-height: normal;
+          letter-spacing: -0.14px;
+          color: $color-bg-light;
+        }
+      }
+    }
+  }
+  .scroll-to-wrap {
+    display: block;
+    width: 100%;
+    padding: 22px 0 10px;
+    background: $color-purple;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    @include breakpoint(small) {
+      padding: 16px 0 8px;
+    }
+    .scroll-to {
+      font-size: 14px;
+      font-family: $font-silkabold;
+      font-style: normal;
+      line-height: 1.43;
+      letter-spacing: normal;
+      color: $color-typo-extra-dark;
+      @include breakpoint(small) {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .arrow {
+        height: 5px;
+        width: 5px;
+        border: 4.8px solid transparent;
+        display: inline-block;
+        transform: translate(0, -1px);
+        border-top-color: $color-typo-extra-dark;
+        @include transition(0.4s);
+        @include breakpoint(small) {
+          transform: translate(0, 1px);
+        }
+      }
+      &:hover {
+        .arrow {
+          transform: translate(0, 4px);
+        }
+      }
+    }
+  }
+}
+
+//History section started
+
+.image-content-layout {
+  padding: 145px 0 62px;
+  overflow: hidden;
+  @include breakpoint(wide) {
+    padding: 67px 0;
+  }
+  @include breakpoint(small) {
+    padding: 67px 0 40px;
+  }
+  .container-fluid {
+    padding: 0;
+    position: relative;
+    .row {
+      height: 100%;
+    }
+    &.right {
+      .row {
+        align-content: flex-end;
+        @include breakpoint(small) {
+          .col-lg-6 {
+            &:first-child {
+              order: 12;
+            }
+            &:last-child {
+              order: 0;
+            }
+          }
+        }
+      }
+      .image-col {
+        display: flex;
+        justify-content: flex-end;
+        img {
+          @include breakpoint(medium) {
+            max-width: 50%;
+          }
+        }
+        .animate-image-wrap {
+          //display: inline-block;
+          @include breakpoint(medium) {
+            text-align: right;
+          }
+        }
+      }
+      .content-col {
+        position: relative;
+        padding-bottom: 125px;
+        @include breakpoint(small) {
+          padding-bottom: 35px;
+        }
+        .colored-bg {
+          position: absolute;
+          right: -84px;
+          top: -80px;
+          width: 400%;
+          background: $color-pink;
+          z-index: -1;
+          height: 0;
+          @include breakpoint(small) {
+            display: none;
+          }
+        }
+      }
+    }
+    &.left {
+      margin-top: 200px;
+      position: relative;
+      @include breakpoint(wide) {
+        margin-top: 144px;
+      }
+      @include breakpoint(small) {
+        margin-top: 32px;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -84px;
+        height: calc(100% + 146px);
+        width: 150px;
+        background: $color-pink;
+        z-index: -1;
+        @include breakpoint(medium) {
+          right: auto;
+          left: 0;
+        }
+        @include breakpoint(small) {
+          width: 50%;
+          top: -36px;
+          height: 76%;
+        }
+      }
+      .row {
+        .col-lg-6 {
+          &:first-child {
+            order: 12;
+          }
+          &:last-child {
+            order: 0;
+          }
+        }
+      }
+      .image-col {
+        text-align: left;
+        padding-top: 5px;
+        .animate-image-wrap {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 800px;
+    @include breakpoint(medium) {
+      position: static;
+      transform: none;
+    }
+  }
+  .content-col {
+    @include breakpoint(medium) {
+      padding-top: 30px;
+    }
+    @include breakpoint(small) {
+      padding-top: 28px;
+    }
+    h2 {
+      padding-bottom: 16px;
+      margin-bottom: 17px;
+      position: relative;
+      @include breakpoint(small) {
+        font-size: 26px;
+        line-height: 1.08;
+        letter-spacing: -0.26px;
+        padding-bottom: 11px;
+        margin-bottom: 14px;
+      }
+    }
+    p {
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+  .image-col{
+    .animate-image-wrap{
+      max-width: 80%;
+    }
+  }
+}
+
+.underline {
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: $color-typo-dark;
+  bottom: 0;
+  left: 0;
+  &.white {
+    background: $color-bg-light;
+  }
+}
+
+//History Team section styles
+
+.history-team {
+  padding: 81px 0 84px;
+  position: relative;
+  @include breakpoint(small) {
+    padding: 32px 0 10px;
+  }
+  .colored-bg {
+    position: absolute;
+    right: calc(50% + -10px);
+    bottom: 0;
+    height: 0;
+    width: 400%;
+    background: $color-pink;
+    z-index: -1;
+    @include breakpoint(small) {
+      display: none;
+    }
+  }
+  h2 {
+    margin-bottom: 31px;
+    padding-bottom: 12px;
+    position: relative;
+    @include breakpoint(small) {
+      margin-bottom: 16px;
+    }
+  }
+  .col-sm-4 {
+    padding: 0 11px;
+    @include breakpoint(small) {
+      padding: 0 15px 29px;
+    }
+    &:nth-child(3n+1),
+    &:first-child {
+      padding-left: 15px;
+    }
+    &:nth-child(3n+3) {
+      padding-right: 15px;
+    }
+    &:last-child {
+      @include breakpoint(small) {
+        padding-bottom: 0;
+      }
+    }
+  }
+  img {
+    margin-bottom: 30px;
+    @include breakpoint(extrasmall) {
+      width: 100%;
+      margin-bottom: 22px;
+    }
+  }
+  p {
+    margin-bottom: 15px;
+  }
+}
+
+//video-about Section
+
+.video-about {
+  padding: 118px 0 104px;
+  position: relative;
+  @include breakpoint(wide) {
+    padding: 68px 0 54px;
+  }
+  @include breakpoint(small) {
+    padding: 13px 0 60px;
+  }
+  &:after {
+    width: 184px;
+    height: 342px;
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: $color-pink;
+    z-index: -1;
+    @include breakpoint(small) {
+      height: 50%;
+    }
+  }
+  .container {
+    @include breakpoint(small) {
+      padding: 0;
+    }
+  }
+  .video-frame-wrap {
+    height: 458px;
+    width: 100%;
+    position: relative;
+    @include breakpoint(small) {
+      height: 220px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      //-webkit-filter: grayscale(100%);
+      //-moz-filter: grayscale(100%);
+      //-ms-filter: grayscale(100%);
+      //-o-filter: grayscale(100%);
+      //filter: grayscale(100%);
+    }
+    .video-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include transition(0.4s);
+      &:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+    }
+    .video-caption {
+      font-size: 18px;
+      font-family: $font-silkalight;
+      letter-spacing: -0.18px;
+      text-align: left;
+      color: $color-pink;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 38px 40px;
+      @include breakpoint(small) {
+        font-size: 12px;
+        font-family: $font-silkaregular;
+        letter-spacing: -0.12px;
+        padding: 13px 14px;
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+  .video-poster {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    &.youtube-thumbnail{
+      z-index: 1;
+    }
+  }
+  .hero-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .trigger-video{
+        img{
+          @include breakpoint(small){
+            max-width: 21px;
+          }
+
+        }
+    }
+  }
+  .video-external{
+    width: 100%;
+    height: 100%;
+  }
+  .vimeo-video{
+    .trigger-video{
+      position: relative;
+    }
+  }
+}
+
+//features-sec Styles
+
+.features-sec {
+  padding: 67px 0 60px;
+  background: $color-bg-purple-light;
+  @include breakpoint(small) {
+    padding: 28px 0;
+  }
+  h2 {
+    padding-bottom: 13px;
+    margin-bottom: 19px;
+    position: relative;
+    @include breakpoint(small) {
+      padding-bottom: 11px;
+      margin-bottom: 13px;
+    }
+  }
+  img {
+    margin: 6px 15px 33px 0;
+    @include breakpoint(small) {
+      margin: 32px auto 33px;
+      display: block;
+    }
+  }
+  .col-lg-6 {
+    @include breakpoint(medium) {
+      padding-bottom: 32px;
+    }
+    @include breakpoint(small) {
+      padding-bottom: 8px;
+    }
+    &:last-child {
+      @media screen and (min-width: 991px) {
+        margin-top: -39px;
+      }
+      @include breakpoint(medium) {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+//talk-about-sec styles
+.talk-about-sec {
+  padding: 43px 0;
+  background: $color-bg-dark;
+  @include breakpoint(small) {
+    padding: 29px 0 47px;
+  }
+  .title-col {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    h2 {
+      color: $color-bg-light;
+      width: 100%;
+      margin-bottom: 53px;
+      padding-bottom: 13px;
+      position: relative;
+      @include breakpoint(small) {
+        margin-bottom: 16px;
+        padding-bottom: 11px;
+      }
+    }
+  }
+}
+
+//cta-block styles
+
+.cta-block {
+  //background: $color-purple;
+  padding: 117px 0 95px;
+  min-height: 460px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  position: relative;
+  @include breakpoint(small) {
+    min-height: inherit;
+    padding: 28px 0 32px;
+  }
+  h2 {
+    font-family: $font-silkalight;
+    color: $white;
+    margin-bottom: 44px;
+    @include breakpoint(small) {
+      margin-bottom: 28px;
+    }
+  }
+  .cta-back-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    background: $color-purple;
+    width: 100%;
+    z-index: -1;
+  }
+  .btn-wrap {
+    display: inline-block;
+    overflow: hidden;
+    transition: none;
+    width: 0;
+    .btn {
+      height: 40px;
+      @media screen and (min-width: 767px) {
+        height: 48px;
+      }
+      .text {
+        display: inline-block;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+//Trustpilot section section
+
+.trust-pilot-sec {
+  padding: 60px 0;
+  min-height: 342px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: $color-typo-dark;
+  position: relative;
+  overflow: hidden;
+  @include breakpoint(small) {
+    padding: 47px 0 59px;
+    min-height: inherit;
+  }
+  .gray-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    background: $color-bg-light;
+    width: 100%;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+body.home {
+  .site-header{
+    position: fixed;
+  }
+  &.scrolled{
+    .site-header{
+      .top-header{
+        background: $color-bg-extra-dark;
+      }
+    }
+  }
+}

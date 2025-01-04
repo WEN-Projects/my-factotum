@@ -1,0 +1,93 @@
+.site-footer {
+  padding: 20px 0;
+  background: $white;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.14px;
+  text-align: left;
+  @include breakpoint(small){
+    font-size: 12px;
+    letter-spacing: -0.12px;
+    padding: 14px 0;
+  }
+  strong {
+    font-family: $font-silkasemibold;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  .container {
+    max-width: 100%;
+    padding: 0 52px 0 45px;
+    @include clearfix;
+    @include breakpoint(wide) {
+      padding: 0 15px 0 16px;
+    }
+  }
+  .site-info {
+    float: left;
+    @include breakpoint(small){
+      width: 45%;
+    }
+  }
+  .right-footer {
+    float: right;
+    @include breakpoint(small){
+      width: 55%;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: $color-typo-dark;
+      @include breakpoint(small){
+        order: 0;
+      }
+      &:hover{
+        color: $color-purple;
+      }
+    }
+  }
+  .social {
+    float: right;
+    margin-left: 43px;
+    margin-top: -3px;
+    @include breakpoint(small){
+      margin: 0;
+      display: block;
+      width: 100%;
+      text-align: right;
+      order: 12;
+      padding-top: 26px;
+    }
+  }
+}
+
+ul.social {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 5px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      &:hover {
+        opacity: 0.7;
+      }
+      img {
+        height: 16px;
+        @include breakpoint(small){
+          height: 12px;
+        }
+      }
+    }
+  }
+}

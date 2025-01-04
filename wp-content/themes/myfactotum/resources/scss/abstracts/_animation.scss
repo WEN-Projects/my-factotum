@@ -1,0 +1,16 @@
+.animate-image-wrap{
+  overflow: hidden;
+  position: relative;
+  .overlay-top,
+  .overlay-right{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    background: $color-bg-light;
+  }
+  img{
+    //max-width: inherit;
+  }
+}

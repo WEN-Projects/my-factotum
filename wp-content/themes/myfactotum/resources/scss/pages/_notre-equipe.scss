@@ -1,0 +1,310 @@
+.user-slide-sec {
+  padding: 41px 0 75px;
+  position: relative;
+  overflow: hidden;
+  @include breakpoint(small) {
+    padding: 15px 0 35px;
+  }
+  &:before {
+    content: '';
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $color-pink;
+    z-index: -1;
+    @include breakpoint(small) {
+      height: 148px;
+    }
+  }
+  h2 {
+    border-bottom: 1px solid;
+    padding-bottom: 13px;
+    margin-bottom: 17px;
+    @include breakpoint(small) {
+      padding-bottom: 11px;
+      margin-bottom: 13px;
+    }
+  }
+  .two-col-content {
+    margin-bottom: 9px;
+  }
+}
+
+.user-slider {
+  @include clearfix;
+  margin: 0 -11px;
+  @include breakpoint(extrasmall) {
+    margin: 0 -6px;
+    padding-right: 28px;
+    padding-top: 6px;
+  }
+  .slick-list {
+    overflow: visible;
+    .slick-slide {
+      opacity: 0.2;
+      &.slick-active {
+        opacity: 1;
+      }
+    }
+  }
+  .user-item {
+    margin: 0 11px;
+    float: left;
+    width: calc(33.3333% - 22px);
+    @include breakpoint(extrasmall) {
+      margin: 0 6px;
+    }
+  }
+  img {
+    margin-bottom: 30px;
+    @include breakpoint(extrasmall) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  p {
+    margin-bottom: 15px;
+    @include breakpoint(small) {
+      font-size: 12px;
+      letter-spacing: -0.12px;
+    }
+    a {
+      color: $color-typo-dark;
+      &:hover {
+        color: $color-purple;
+      }
+    }
+  }
+}
+
+/* pop-immovable-sec */
+.pop-immovable-sec {
+  background: $color-bg-extra-dark;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: -100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  @include transition(0.4s);
+  @include breakpoint(small) {
+    display: block;
+    padding-top: 82px;
+  }
+  &.prestataires-popup{
+    background: $color-orange;
+  }
+  &.show-experts-popup {
+    top: 0;
+    @include breakpoint(small){
+      z-index: 9;
+    }
+  }
+  .container-fluid {
+    padding: 0;
+  }
+  .img-col {
+    height: 73vh;
+    @include breakpoint(small) {
+      order: 12;
+      height: 250px;
+    }
+  }
+  .content-col {
+    overflow: auto;
+    @include breakpoint(small) {
+      order: 0;
+    }
+    * {
+      color: $color-bg-light;
+    }
+    .inner {
+      max-width: 360px;
+      margin: 10.3% 0 10.3% 115px;
+      @include breakpoint(wide) {
+        margin: 10.3% 0 10.3% 15px;
+      }
+      @include breakpoint(small){
+        margin: 10.3% 0 16.3% 15px;
+      }
+      h2 {
+        font-family: $font-silkalight;
+        margin-bottom: 63px;
+        @include breakpoint(small){
+          margin-bottom: 15px;
+        }
+      }
+      h3 {
+        font-size: 20px;
+        font-family: $font-silkasemibold;
+        letter-spacing: -0.2px;
+        margin-bottom: 15px;
+        @include breakpoint(small){
+          margin-bottom: 9px;
+        }
+      }
+      p {
+        font-size: 14px;
+        margin-bottom: 20px;
+        @include breakpoint(small){
+          margin-bottom: 16px;
+        }
+      }
+      .btn {
+        margin-top: 16vh;
+        @include breakpoint(small){
+          margin-top: 11px;
+        }
+      }
+    }
+  }
+  .icon-close {
+    width: 28px;
+    height: 28px;
+    display: block;
+    position: absolute;
+    top: 57px;
+    right: 48px;
+    z-index: 1;
+    span {
+      display: block;
+      height: 2px;
+      width: 28px;
+      border-radius: 2px;
+      background: $color-bg-light;
+      position: absolute;
+      left: 0;
+      top: 13px;
+      @include breakpoint(small){
+        left: 36px;
+        top: 37px;
+      }
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .container-fluid{
+    height: 100%;
+    .row{
+      height: 100%;
+      .img-col{
+        height: 100% !important;
+        @include breakpoint(small){
+          height: 250px !important;
+        }
+      }
+    }
+  }
+}
+
+//providers-sec
+.provider-box {
+  height: 185px;
+  position: relative;
+  margin-bottom: 30px;
+  @include breakpoint(small) {
+    height: 120px;
+    margin-bottom: 14px;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1F1E23;
+    @include transition(0.4s);
+    @include breakpoint(small) {
+      mix-blend-mode: multiply;
+    }
+  }
+  &:hover {
+    &:before {
+      opacity: 0.4;
+    }
+    .inner {
+      .link {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .inner {
+    position: relative;
+    height: 100%;
+    padding: 13px 18px;
+    @include breakpoint(small) {
+      padding: 16px 17px;
+    }
+    h2 {
+      font-family: $font-silkalight;
+      color: $color-bg-light;
+      margin: 0;
+      padding: 0;
+      border: none;
+      @include breakpoint(medium) {
+        font-size: 22px;
+      }
+    }
+    .link {
+      font-size: 36px;
+      font-family: $font-silkalight;
+      line-height: 1.11;
+      color: $color-bg-light;
+      position: absolute;
+      right: 19px;
+      bottom: 13px;
+      @include transition(0.4s);
+      @include breakpoint(small) {
+        right: 18px;
+        bottom: 9px;
+      }
+    }
+  }
+}
+
+.providers-sec {
+  padding: 58px 0 48px;
+  @include breakpoint(small) {
+    padding: 32px 0 20px;
+  }
+  h2 {
+    font-family: $font-silkasemibold;
+    border-bottom: 1px solid;
+    padding-bottom: 13px;
+    margin-bottom: 17px;
+    @include breakpoint(small) {
+      padding-bottom: 12px;
+      margin-bottom: 13px;
+    }
+  }
+  .two-col-content {
+    margin-bottom: 19px;
+  }
+  &.dark-bg {
+    background: $color-typo-dark;
+    @include breakpoint(small) {
+      //padding-top: 14px;
+    }
+    h2 {
+      color: $color-bg-light;
+    }
+    p {
+      color: $color-bg-light;
+    }
+    .provider-box {
+      &:before {
+        background: $color-orange;
+      }
+    }
+  }
+}
